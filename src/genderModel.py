@@ -9,7 +9,7 @@ Revised: 28 March 2014
 import csv as csv
 import numpy as np
 
-csv_file_object = csv.reader(open('train.csv', 'rb')) 	# Load in the csv file
+csv_file_object = csv.reader(open('../data/train.csv', 'rb')) 	# Load in the csv file
 header = csv_file_object.next() 						# Skip the fist line as it is a header
 data=[] 												# Create a variable to hold the data
 
@@ -54,7 +54,7 @@ print 'Proportion of men who survived is %s' % proportion_men_survived
 # if male, then model that he did not survive (0)
 
 # First, read in test.csv
-test_file = open('test.csv', 'rb')
+test_file = open('../data/test.csv', 'rb')
 test_file_object = csv.reader(test_file)
 header = test_file_object.next()
 

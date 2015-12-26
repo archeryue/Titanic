@@ -9,7 +9,7 @@ Revised : 28 March 2014
 import csv as csv
 import numpy as np
 
-csv_file_object = csv.reader(open('train.csv', 'rb'))       # Load in the csv file
+csv_file_object = csv.reader(open('../data/train.csv', 'rb'))       # Load in the csv file
 header = csv_file_object.next()                             # Skip the fist line as it is a header
 data=[]                                                     # Create a variable to hold the data
 
@@ -20,7 +20,7 @@ data = np.array(data)                       # Then convert from a list to an arr
 # In order to analyse the price column I need to bin up that data
 # here are my binning parameters, the problem we face is some of the fares are very large
 # So we can either have a lot of bins with nothing in them or we can just lose some
-# information by just considering that anythng over 39 is simply in the last bin.
+# information by just considering that anything over 39 is simply in the last bin.
 # So we add a ceiling
 fare_ceiling = 40
 # then modify the data in the Fare column to = 39, if it is greater or equal to the ceiling
@@ -70,7 +70,7 @@ survival_table[ survival_table >= 0.5 ] = 1
 # Now I have my indicator I can read in the test file and write out
 # if a women then survived(1) if a man then did not survived (0)
 # First read in test
-test_file = open('test.csv', 'rb')
+test_file = open('../data/test.csv', 'rb')
 test_file_object = csv.reader(test_file)
 header = test_file_object.next()
 
